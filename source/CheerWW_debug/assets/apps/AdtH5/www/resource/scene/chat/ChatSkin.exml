@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="ChatSkin" width="1136" height="640" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" >
+	<e:Rect id="background" left="0" right="0" top="0" bottom="0" fillColor="0x1A1D26" locked="true"/>
+	<e:Group left="0" right="0" top="0" bottom="0">
+		<e:Group id="topLayout" height="107" left="0" top="0" width="100%">
+			<e:Image source="dialog_top_png" left="0" right="0" top="0" scale9Grid="3,13,18,81" bottom="0"/>
+			<e:Group left="0" right="0" top="0" bottom="0">
+				<e:ToggleButton id="worldTab" label="世界" x="18" top="0" skinName="skins.ChannelToggleButtionSkin"/>
+				<e:ToggleButton id="privateTab" label="私聊" top="0" x="28" y="10" skinName="skins.ChannelToggleButtionSkin"/>
+				<e:layout>
+					<e:HorizontalLayout gap="-1"/>
+				</e:layout>
+			</e:Group>
+		</e:Group>
+		<e:Group height="100%" width="100%" x="351" y="316">
+			<e:Scroller id="msgScroller" width="100%" x="0" height="100%" y="0">
+				<e:Group id="scrollGroup">
+					<e:layout>
+						<e:VerticalLayout gap="25" paddingTop="10" paddingLeft="10" paddingRight="10" paddingBottom="10"/>
+					</e:layout>
+				</e:Group>
+			</e:Scroller>
+			<e:Image id="toggleListBtn" source="Open_ico_png" x="872" y="133"/>
+			<e:Group id="privateListGroup" height="100%" width="260" y="168">
+				<e:Rect left="0" right="0" top="0" bottom="0" fillColor="0x16171C"/>
+				<e:Scroller width="100%" height="100%" scrollPolicyH="off">
+					<e:List id="privateList" top="0" left="0" right="0" bottom="0" scrollEnabled="true"/>
+				</e:Scroller>
+				
+			</e:Group>
+			<e:layout>
+				<e:HorizontalLayout verticalAlign="middle" gap="-5"/>
+			</e:layout>
+		</e:Group>
+		<e:Group id="bottomLayout" left="0" bottom="0" height="152" width="100%">
+			<e:Image source="dialog_bottom_png" scale9Grid="5,19,37,114" left="0" right="0" bottom="0" top="0"/>
+			<e:Group top="0" right="0" left="0" bottom="0">
+				<e:Image id="soundBtn" source="intercom_ico_png" x="19" y="531"/>
+				<e:Group height="101" width="100%" x="133" y="51">
+					<e:Image source="input-box_png" scale9Grid="20,12,6,77" left="0" right="0" top="0" bottom="0"/>
+					<e:TextInput id="inputText" x="7" width="523" verticalCenter="0.5" skinName="skins.CommonTextInputSkin" height="82"/>
+					<e:Rect id="arrowBtn" height="82" width="68" x="536" y="10" strokeAlpha="0" fillAlpha="0"/>
+				</e:Group>
+				<e:Image id="faceBtn" source="expression_ico_png" x="669" y="537"/>
+				<e:Image id="addBtn" source="add_ico_png" x="763" y="531"/>
+				<e:Image id="sendBtn" source="send_bt_png" x="864" y="519"/>
+				<e:layout>
+					<e:HorizontalLayout verticalAlign="middle" paddingRight="10" paddingLeft="10"/>
+				</e:layout>
+			</e:Group>
+		</e:Group>
+		<e:layout>
+			<e:VerticalLayout gap="0"/>
+		</e:layout>
+	</e:Group>
+	<e:Image id="closeBtn" source="close_png" top="10" right="15" locked="true"/>
+	<e:Group id="initGroup" left="0" right="0" top="0" bottom="0" locked="true" visible="false">
+		<e:Rect left="0" right="0" top="0" bottom="0"/>
+		<e:Label id="stateLabel" text="...." horizontalCenter="0" verticalCenter="0"/>
+	</e:Group>
+</e:Skin>

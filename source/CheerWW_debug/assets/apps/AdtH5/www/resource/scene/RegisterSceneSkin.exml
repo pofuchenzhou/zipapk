@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="RegisterSceneSkin" width="800" height="480" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect bottom="0" left="0" fillColor="0xEBEBEB" top="0" right="0" y="20" x="20" locked="true"/>
+	<e:Group left="0" right="0" top="0" bottom="0">
+		<e:Label text="帐号注册" size="50" textColor="0x000000" horizontalCenter="0" top="20"/>
+		<e:Group height="318" width="722" horizontalCenter="0" verticalCenter="0">
+			<e:Group height="100%" width="100%" horizontalCenter="0" verticalCenter="0">
+				<e:Rect fillColor="0xDDDDDD" left="0" right="0" top="0" bottom="0"/>
+				<e:Group left="0" right="0" top="0" bottom="0">
+					<e:Group y="35" width="503" horizontalCenter="1" height="55" x="10">
+						<e:layout>
+							<e:HorizontalLayout verticalAlign="middle"/>
+						</e:layout>
+						<e:Label y="13" textColor="0x000000" size="40" text="帐号：" x="0"/>
+						<e:TextInput id="nameInput" width="100%" y="8" height="52" x="123" prompt="4-15字符"/>
+					</e:Group>
+					<e:Group height="55" width="503" y="25" horizontalCenter="1">
+						<e:Label y="13" textColor="0x000000" size="40" text="昵称：" x="0"/>
+						<e:TextInput id="nicknameInput" x="123" width="100%" y="8" height="52" restrict="0-9a-zA-Z" prompt="2-15字符"/>
+						<e:layout>
+							<e:HorizontalLayout verticalAlign="middle"/>
+						</e:layout>
+					</e:Group>
+					<e:Group y="82" width="503" height="55" horizontalCenter="1">
+						<e:layout>
+							<e:HorizontalLayout verticalAlign="middle"/>
+						</e:layout>
+						<e:Label y="153" textColor="0x000000" size="40" text="密码：" x="152"/>
+						<e:TextInput id="pwdInput" y="148" x="275" width="100%" height="52" displayAsPassword="true" prompt="5-15字符"/>
+					</e:Group>
+					<e:Group y="142" width="503" horizontalCenter="1" height="55" x="10">
+						<e:layout>
+							<e:HorizontalLayout verticalAlign="middle"/>
+						</e:layout>
+						<e:Label y="153" textColor="0x000000" size="40" text="重复：" x="152"/>
+						<e:TextInput id="rpwdInput" y="148" width="100%" height="52" displayAsPassword="true" x="275" prompt="5-15字符"/>
+					</e:Group>
+					<e:Group y="152" width="503" horizontalCenter="1" height="55" x="20">
+						<e:layout>
+							<e:HorizontalLayout verticalAlign="middle" horizontalAlign="center"/>
+						</e:layout>
+						<e:Label y="153" textColor="0x000000" size="40" text="验证码：" x="152"/>
+						<e:TextInput id="codeInput" y="148" x="275" width="100%" height="52"/>
+						<e:Image id="codeImg" source="header_png" x="480" y="15" width="150" height="60"/>
+					</e:Group>
+					<e:layout>
+						<e:VerticalLayout horizontalAlign="center" paddingTop="10"/>
+					</e:layout>
+				</e:Group>
+			</e:Group>
+			<e:layout>
+				<e:HorizontalLayout gap="0"/>
+			</e:layout>
+		</e:Group>
+		<e:Button id="registerBtn" label="注   册" y="407" width="115" horizontalCenter="0.5"/>
+		<e:layout>
+			<e:VerticalLayout horizontalAlign="center" verticalAlign="middle"/>
+		</e:layout>
+	</e:Group>
+</e:Skin>

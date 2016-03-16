@@ -1,0 +1,50 @@
+message RequestMessage{
+	required RequestType requestType=1[default = CLIENT_TO_LOGIN];
+	enum RequestType {
+		CLIENT_TO_LOGIN=1;
+		CLIENT_TO_GAME=2;
+		CLIENT_TO_IMSERVER=3;
+
+		LOGIN_TO_CLIENT=100001;
+		GAME_TO_CLIENT=100002;
+		IM_TO_CLIENT=100003;
+	}
+	optional string gameId=2;
+	optional bool registerFlag=3;
+	optional MessageType messageType = 4 [default = BROADCAST];
+	enum MessageType {
+      BROADCAST = 1;
+      UNICAST = 2;
+      MULTICAST = 3;
+  	}
+	//可重复字段,接收消息的channel
+	repeated int32 channelId = 5;
+	optional bytes message=6;
+}
+message SendToServerMessage{
+	//发送消息的channel
+	required int32 channelId=1[default=-1];
+	optional string gameId=2;
+	required bytes message=3;
+}
+
+
+
+message Command{
+	required int32 commandId=1[default=-1];
+	optional bytes message=2;
+}
+
+message ClientChannelRegisterMessage{
+	required string gameId=1[default =""];
+	required string uid=2[default =""];
+}
+
+message ServerChannelRegisterMessage{
+	required string sid=1[default =""];
+	required serverType type=2[default =LOGIN];
+	enum serverType {
+		LOGIN=1;
+		IM=2;
+	}
+}

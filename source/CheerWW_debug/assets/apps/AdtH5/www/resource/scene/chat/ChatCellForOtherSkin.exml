@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="ChatCellForOtherSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group left="0" top="0" bottom="0" right="0">
+		<e:Image id="headImg" horizontalCenter="0" verticalCenter="0" source="head_png"/>
+		<e:Group height="100%" width="100%" x="8" y="63">
+			<e:Group width="100%" y="31" height="25" left="1">
+				<e:Label id="nickLabel" textColor="0x858FA2" size="25" text="13:03  xxxxxx" top="0" left="16"/>
+			</e:Group>
+			<e:Group id="messageGroup" height="100%" x="36" y="5">
+				<e:Image id="backImg" top="0" bottom="0" left="0" width="165" source="left_dialog_png" scale9Grid="23,41,22,14"/>
+				<e:Label id="textLabel" multiline="true" lineSpacing="8" size="28" verticalCenter="-2" left="33" text="哈哈" textColor="0xFFFFFF"/>
+			</e:Group>
+			<e:layout>
+				<e:VerticalLayout/>
+			</e:layout>
+		</e:Group>
+		<e:layout>
+			<e:HorizontalLayout horizontalAlign="right" verticalAlign="top"/>
+		</e:layout>
+	</e:Group>
+</e:Skin>

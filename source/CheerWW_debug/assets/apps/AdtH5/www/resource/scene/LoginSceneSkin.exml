@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="LoginSceneSkin" width="1136" height="640" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group height="520" y="60" width="850" x="143">
+		<e:Image source="login_bg_png" left="0" right="0" top="0" bottom="0" scale9Grid="124,106,747,7"/>
+		<e:Label text="登录" y="31" size="36" horizontalCenter="0.5" textColor="0xB5B5B5"/>
+		<e:Group height="100" y="122" left="72" right="72">
+			<e:Label text="帐号:" x="39" y="31" size="32" textColor="0xB5B5B5"/>
+			<e:TextInput id="nameInput" x="332" y="36" width="100%" skinName="skins.TextInputSkin"/>
+			<e:Label id="registerBtn" text="注册用户" x="627" y="9" size="28" textColor="0xB5B5B5" height="78" verticalAlign="bottom"/>
+			<e:layout>
+				<e:HorizontalLayout verticalAlign="middle" gap="15" horizontalAlign="center"/>
+			</e:layout>
+		</e:Group>
+		<e:Group height="100" y="228" left="72" right="72">
+			<e:Label y="24" textColor="0xB5B5B5" size="32" text="密码:" x="28" locked="true"/>
+			<e:Group height="85" width="100%" x="131" y="45">
+				<e:TextInput id="pwdInput" left="0" top="0" bottom="0" right="0" displayAsPassword="true"/>
+				<e:Image source="eyes_png" verticalCenter="0" right="10"/>
+			</e:Group>
+			<e:Label y="3" size="28" text="忘记密码" x="622" textColor="0x6296B4" height="77" verticalAlign="bottom" locked="true"/>
+			<e:layout>
+				<e:HorizontalLayout gap="15" horizontalAlign="center" verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
+		<e:Group height="69" y="338" left="72" right="72">
+			<e:Button id="loginBtn" label="登    录" x="175" y="13" skinName="skins.ButtonSkin" width="55%"/>
+			<e:Label id="autoLoginBtn" y="-6" size="28" text="游客登录" x="359" textColor="0x0079B6" height="69" verticalAlign="bottom"/>
+			<e:layout>
+				<e:HorizontalLayout gap="15" horizontalAlign="center"/>
+			</e:layout>
+		</e:Group>
+		<e:Group height="50" y="450" left="80" right="80">
+			<e:Label y="24" textColor="0xB5B5B5" size="24" text="第三方帐号登录:" x="-10"/>
+			<e:Image source="qq_png" x="320" y="15"/>
+			<e:Image source="weibo_png" x="270" y="12"/>
+			<e:Image source="weixin_png" x="204" y="13"/>
+			<e:layout>
+				<e:HorizontalLayout horizontalAlign="right" verticalAlign="middle"/>
+			</e:layout>
+		</e:Group>
+	</e:Group>
+</e:Skin>

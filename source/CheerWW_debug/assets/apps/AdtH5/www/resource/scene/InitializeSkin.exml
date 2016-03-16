@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="InitializeSkin" width="800" height="480" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect bottom="0" right="0" left="0" top="0" fillColor="0xEBEBEB" x="10" y="10" locked="true"/>
+	<e:Group height="61" width="567" y="32" horizontalCenter="0">
+		<e:Label text="昵称 " x="-75" y="79" textColor="0x000000" size="40"/>
+		<e:TextInput id="nameInput" x="71" y="68" width="100%" height="52"/>
+		<e:layout>
+			<e:HorizontalLayout horizontalAlign="left" verticalAlign="middle"/>
+		</e:layout>
+	</e:Group>
+	<e:Group height="288" width="566" y="111" horizontalCenter="0">
+		<e:Rect left="0" top="0" bottom="0" right="0" fillColor="0xD1D1D1" locked="true"/>
+		<e:Rect id="selectRect" height="80" width="80" x="12" y="12" fillColor="0x32FF00"/>
+		<e:Group id="headGroup" left="0" top="0" bottom="0" right="0">
+			<e:layout>
+				<e:TileLayout paddingLeft="12" paddingRight="12" paddingTop="12" paddingBottom="12" horizontalGap="12" verticalGap="12"/>
+			</e:layout>
+			<e:Image source="1_png" x="211" y="103"/>
+			<e:Image source="2_png" x="289" y="120"/>
+			<e:Image source="3_png" x="406" y="111"/>
+			<e:Image source="4_png" x="429" y="164"/>
+			<e:Image source="5_png" x="418" y="140"/>
+			<e:Image source="6_png" x="392" y="155"/>
+			<e:Image source="7_png" x="368" y="182"/>
+			<e:Image source="8_png" x="295" y="167"/>
+			<e:Image source="9_png" x="345" y="211"/>
+			<e:Image source="10_png" x="438" y="130"/>
+			<e:Image source="11_png" x="463" y="133"/>
+			<e:Image source="12_png" x="502" y="142"/>
+			<e:Image source="13_png" x="322" y="182"/>
+			<e:Image source="14_png" x="312" y="220"/>
+			<e:Image source="15_png" x="278" y="190"/>
+			<e:Image source="16_png" x="349" y="207"/>
+			<e:Image source="17_png" x="441" y="209"/>
+			<e:Image source="18_png" x="506" y="200"/>
+		</e:Group>
+		<e:layout>
+			<e:BasicLayout/>
+		</e:layout>
+	</e:Group>
+	<e:Button id="inGameBtn" label="进入聊天" y="413" horizontalCenter="0" width="116"/>
+	<e:Group id="initGroup" left="0" top="0" bottom="0" right="0" locked="true" visible="false">
+		<e:Rect left="0" top="0" bottom="0" right="0" fillAlpha="1"/>
+		<e:Label id="stateLabel" text="初始化..." horizontalCenter="0" verticalCenter="0" size="15"/>
+	</e:Group>
+</e:Skin>

@@ -1,0 +1,371 @@
+message Commond{
+	required int32 commandId=1[default=-1];
+	optional bytes message=2;
+}
+/**
+ * 消息对象
+ */
+message Chat{
+  required string groupId = 1 [default = "0"];
+  /**
+   * msg全局id
+   */
+  optional string uuid = 2;
+  /**
+   * 发送方uid
+   */
+  optional string fromuid=3;
+  /**
+   * 本地msgid，校验使用
+   */
+  optional string msgId=4;
+  /**
+   * 接收方uid
+   */
+  optional string touid = 5;
+  /**
+   * 消息内容
+   */
+  optional string message = 6;
+  /**
+   * 消息类型
+   */
+  optional MsgType msgType = 7[default = IMAGE];
+  /**
+   * 群聊时，被@成员集合
+   */
+  repeated string callIds = 8;
+  /**
+   * 时间戳
+   */
+  optional int64 time = 9;
+ /**
+    *  昵称
+    */
+  optional string nickname = 10;
+ /**
+    * 头像索引
+    */
+  optional int64 faceIndex = 11;
+
+
+  enum MsgType{
+  	  TEXT = 0;
+      IMAGE = 1;
+      AUDIO = 2;
+      VIDEO = 3;
+      LINK = 4;
+  }
+
+}
+/**
+ * 群组类型
+ */
+enum GroupType{
+	/**
+	 * 临时
+	 */
+	TMP = 0;
+	/**
+	 * 组队
+	 */
+	TEAM = 1;
+	/**
+	 * 地图
+	 */
+	MAP = 2;
+	/**
+	 * 公会
+	 */
+	GUILD = 3;
+	/**
+	 * 固定
+	 */
+	SOILD = 4;
+}
+
+/**
+ * 客户端发送P2P消息
+ */
+message request_10000{
+	required Chat message=1;
+}
+
+message response_10000{
+	required int32 result=1;
+	optional string message=2;
+}
+
+/**
+ * 服务器转发P2P消息
+ */
+message response_10002{
+	optional Chat message=1;
+}
+
+/**
+ * 创建群组
+ */
+message request_10004{
+	optional GroupType groupType=1 [default = TMP];
+}
+message response_10004{
+	optional int32 result=1;
+	optional string groupId=2;
+}
+/**
+ * 加入群组
+ */
+message request_10005{
+	required string groupId=1;
+}
+message response_10005{
+	required int32 result=1;
+	optional string groupId=2;
+}
+/**
+ *离开群组
+ */
+message request_10006{
+	required string groupId=1;
+}
+message response_10006{
+	required int32 result=1;
+	optional string groupId=2;
+}
+/**
+ *解散群组
+ */
+message request_10007{
+	required string groupId=1;
+}
+message response_10007{
+	required int32 result=1;
+	optional string groupId=2;
+}
+
+/**
+ *移出群组
+ */
+message request_10008{
+	/**
+	 * 被移除用户uid
+	 */
+	required string uid=1;
+	required string groupId=2;
+}
+message response_10008{
+	required int32 result=1;
+	optional string groupId=2;
+}
+
+/**
+ * 解散群组的通知
+ */
+message response_10009{
+	required int32 result=1;
+	optional string groupId=2;
+}
+
+/**
+ *获取系统记录当前游戏的最后登录时间戳
+ */
+message request_10010{
+}
+message response_10010{
+	required int64 time=1;
+}
+/**
+ *设定最后登录时间戳
+ */
+message request_10011{
+}
+message response_10011{
+	required int64 time=1;
+}
+
+/**
+ * 拉取私聊历史消息
+ */
+message request_10012{
+	/**
+	 * 目标用户uid
+	 */
+	required string uid2=1;
+	/**
+	 * 较新时间（刚登录时间/翻页消息时间）
+	 */
+	required int64 startTime=2;
+	/**
+	 * 上次离线时间
+	 */
+	required int64 endTime = 3;
+
+}
+message response_10012{
+	/**
+	 * 时间段内总共消息数量
+	 */
+	optional int32 total = 1;
+	/**
+	 * Msg.Chat
+	 */
+	repeated bytes message=2;
+
+	optional int64 lastMsgTime=3;
+}
+
+/**
+ * 拉取群组历史消息
+ */
+message request_10013{
+	required string groupId=1;
+	/**
+	 * 较新时间（刚登录时间/翻页消息时间）
+	 */
+	required int64 startTime=2;
+	/**
+	 * 上次离线时间
+	 */
+	required int64 endTime = 3;
+}
+
+/**
+ * 拉取游戏广播历史消息
+ */
+message request_10014{
+	/**
+	 * 较新时间（刚登录时间/翻页消息时间）
+	 */
+	required int64 startTime=1;
+	/**
+	 * 上次离线时间
+	 */
+	required int64 endTime = 2;
+}
+
+/**
+ * 获取离线p2p消息数量列表
+ */
+message request_10015{
+}
+message response_10015{
+	/**
+	 * msg_count
+	 */
+	repeated msg_count message=1;
+}
+message msg_count{
+	optional string uid = 1;
+	optional int32 count = 2;
+}
+/**
+ * 清空离线消息列表
+ */
+message request_10016{
+}
+message response_10016{
+	optional int32 result = 1;
+}
+/**
+ * 批量拉入群组
+ */
+message request_10017{
+	repeated string uid = 1;
+	optional string groupId = 2;
+}
+message response_10017{
+	optional int32 result = 1;
+	optional string groupId = 2;
+}
+/**
+ * 临时注册协议
+ */
+message request_10100{
+	required string uid = 1;
+   /**
+    *  昵称
+    */
+  	optional string nickname = 10;
+   /**
+    * 头像索引
+    */
+  	optional int64 faceIndex = 11;
+}
+message response_10100{
+	optional int32 result = 1;
+	optional string uid = 2;
+	optional int32 channelId = 3;
+}
+
+/**
+ * 临时协议 获取在线玩家列表
+ */
+message request_10101{
+}
+message UserDetail{
+	optional string uid = 1;
+	optional string nickname = 2;
+	optional int64 faceIndex = 3;
+}
+
+message response_10101{
+	repeated UserDetail userDetail = 1;
+}
+
+/**
+ * 客户端发送群组消息
+ */
+message request_11000{
+	/**
+	 * Msg.Chat
+	 */
+	optional Chat message=1;
+}
+message response_11000{
+	required int32 result=1;
+	optional string message=2;
+}
+/**
+ * 服务器转发群组消息
+ */
+message response_11002{
+	/**
+	 * Msg.Chat
+	 */
+	optional Chat message=1;
+}
+/**
+ * 服务器转发群组@点名通知
+ */
+message response_11003{
+	optional string groupId=1;
+}
+/**
+ * 客户端发送广播消息
+ */
+message request_12000{
+	/**
+	 * Msg.Chat
+	 */
+	required Chat message=1;
+}
+message response_12000{
+	required int32 result=1;
+	optional string message=2;
+}
+
+/**
+ * 服务器转发广播消息
+ */
+message response_12002{
+	/**
+	 * Msg.Chat
+	 */
+	optional Chat message=1;
+}
+/**
+ * 服务器转发广播消息@点名通知
+ */
+message response_12003{
+}
